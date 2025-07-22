@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{helvet}
+\usepackage{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.5em}{}
+\title{Decision Table for Library Book Lending Policy}
+\author{Chandanpreet Singh 40324569\\
+SOEN 6481: Software Systems Requirements Specification\\
+Submitted via GitHub repository: \href{https://github.com/chandanpreet707/soen6481-d1-vision}{soen6481-d1-vision}
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Context}
+
+As part of the requirements specification for a university Library Management System, we are designing a rule-based policy to decide whether a user can borrow a specific book. The system will take into account both the user type and the book type to determine if borrowing is allowed and for how long.
+
+\section{Rules to Consider}
+
+\begin{itemize}
+    \item \textbf{User Types:} Student, Faculty
+    \item \textbf{Book Types:} Regular, Reference
+    \item Reference books cannot be borrowed by anyone.
+    \item Borrow durations for regular books:
+    \begin{itemize}
+        \item Student: 14 days
+        \item Faculty: 30 days
+    \end{itemize}
+\end{itemize}
+
+\section{Conditions and Actions}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item C1: User Type = Student or Faculty
+    \item C2: Book Type = Regular or Reference
+\end{itemize}
+
+\textbf{Actions:}
+\begin{itemize}
+    \item A1: Allow Borrowing = Yes or No
+    \item A2: Duration = 14, 30, or N/A
+\end{itemize}
+
+\section{Decision Table (Complete)}
+
+\begin{center}
+\begin{tabular}{>{\bfseries}l l l c c}
+\toprule
+Rule & User Type & Book Type & Allow Borrowing & Duration \\
+\midrule
+R1 & Student & Regular   & Yes & 14 days \\
+R2 & Student & Reference & No  & N/A     \\
+R3 & Faculty & Regular   & Yes & 30 days \\
+R4 & Faculty & Reference & No  & N/A     \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Analysis}
+
+\subsection*{Redundancy Check}
+The table includes all valid combinations. While R2 and R4 both result in ``No'' for Reference books, they are not redundant because they correspond to different user types and maintain clarity.
+
+\subsection*{Conflicts}
+There are no conflicting rules. Each user/book combination is handled clearly with consistent actions.
+
+\subsection*{Simplification Possibility}
+Since reference books are never allowed to be borrowed, we can extract that as a precondition:
+
+\begin{quote}
+\textit{If Book Type is Reference → Deny borrowing (regardless of user type)}
+\end{quote}
+
+This allows us to simplify the table and focus only on Regular books for rule evaluation.
+
+\section{Simplified Decision Table (Regular Books Only)}
+
+\begin{center}
+\begin{tabular}{>{\bfseries}l l c c}
+\toprule
+Rule & User Type & Allow Borrowing & Duration \\
+\midrule
+R1 & Student & Yes & 14 days \\
+R2 & Faculty & Yes & 30 days \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+This decision table helps formalize the borrowing policy and can directly support implementation in the Library Management System. By identifying a precondition for Reference books, we reduce complexity and improve maintainability.
+
+\end{document}
