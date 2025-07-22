@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{hyperref}
+
+\title{Structured Natural Language Requirements\\
+\large SOEN 6481 – Software Systems Requirements Specification (P5)}
+\author{Chandanpreet Singh 40324569}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Instructions}
+This activity focuses on transforming loosely defined, natural language requirements into disciplined ones by attaching measurable fit criteria. Each fit criterion makes the requirement verifiable and testable.
+
+\section*{Specification and Fit Criteria Table}
+
+\begin{tabular}{p{0.47\textwidth} p{0.47\textwidth}}
+\toprule
+\textbf{Specification} & \textbf{Fit Criterion} \\
+\midrule
+
+Trains should run at high frequency during rush hours. 
+&
+Trains must arrive at each station every 3–5 minutes between 7:00–10:00 AM and 4:00–7:00 PM, Monday to Friday. \\
+\addlinespace
+
+In order to ensure comfortable transportation, trains should accelerate/decelerate smoothly. 
+&
+Acceleration should not exceed 1.2 m/s\textsuperscript{2}, and deceleration should not exceed 1.4 m/s\textsuperscript{2}, measured under normal load and track conditions. \\
+\addlinespace
+
+Meetings should be scheduled as quickly as possible once they are initiated. 
+&
+At least three meeting time proposals must be sent to all participants within 2 business days of the meeting request initiation. \\
+\bottomrule
+\end{tabular}
+
+\vspace{1cm}
+\noindent\textbf{Submitted via GitHub:} \href{https://github.com/chandanpreet707/soen6481-d1-vision}{soen6481-d1-vision}
+
+\end{document}
