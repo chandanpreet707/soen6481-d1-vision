@@ -2187,4 +2187,355 @@ Email System &
 \caption{State Machine Diagram - Late Fee Application Process}
 \end{figure}
 
+
+% SECTION 4: SUPPLEMENTARY SPECIFICATION
+
+\section{Supplementary Specification}
+
+\subsection{Introduction}
+
+\subsubsection{Purpose}
+This Supplementary Specification captures the CanaLease system requirements that are not readily captured in the use cases of the use-case model. It includes legal and regulatory requirements, quality attributes, and other requirements such as operating environments and design constraints.
+
+\subsubsection{Scope}
+This document applies to the CanaLease Property Management Platform, covering all non-functional requirements that affect system design, implementation, and operation in the Canadian rental market context.
+
+\subsubsection{Definitions, Acronyms and Abbreviations}
+\begin{itemize}
+    \item \textbf{MTBF:} Mean Time Between Failures
+    \item \textbf{MTTR:} Mean Time To Repair
+    \item \textbf{PCI DSS:} Payment Card Industry Data Security Standard
+    \item \textbf{WCAG:} Web Content Accessibility Guidelines
+    \item \textbf{RTO:} Recovery Time Objective
+    \item \textbf{RPO:} Recovery Point Objective
+    \item \textbf{CRA:} Canada Revenue Agency
+\end{itemize}
+
+\subsubsection{References}
+\begin{itemize}
+    \item Vision Document - CanaLease v2.0
+    \item Use Case Model - Section 2 of this document
+    \item Canadian Provincial Tenancy Acts
+    \item PIPEDA Compliance Guidelines
+\end{itemize}
+
+\subsection{Functionality}
+Additional functional requirements not expressed in use cases:
+
+\subsubsection{Report Templates}
+\begin{itemize}
+    \item System shall provide T776 Statement of Real Estate Rentals format for tax reporting
+    \item Monthly rent roll reports with customizable columns
+    \item Vacancy reports showing unit turnover rates
+    \item Maintenance cost analysis by property and category
+\end{itemize}
+
+\subsubsection{Receipt Formats}
+\begin{itemize}
+    \item Official rent receipts must include: landlord name, tenant name, property address, payment date, amount, period covered
+    \item Receipts must be available in both English and French
+    \item System shall generate CRA-compliant year-end rental receipts
+\end{itemize}
+
+\subsubsection{Calculation Formulas}
+\begin{itemize}
+    \item Late fee calculation: Base rent × 0.05 (5\%) after grace period
+    \item Proration formula: (Monthly rent ÷ Days in month) × Days occupied
+    \item Security deposit interest: As per provincial regulations (e.g., Ontario: Bank of Canada rate)
+\end{itemize}
+
+\subsection{Usability}
+
+\subsubsection{Training Requirements}
+\begin{itemize}
+    \item \textbf{Indicator 1:} New landlords shall become proficient with basic operations within 2 hours of training
+    \item \textbf{Indicator 2:} Tenants shall successfully complete rent payment on first attempt 95\% of the time without support
+\end{itemize}
+
+\subsubsection{Measurable Task Times}
+\begin{itemize}
+    \item Creating a new lease agreement: < 10 minutes for experienced users
+    \item Processing rent payment: < 2 minutes
+    \item Submitting maintenance request: < 3 minutes
+    \item Generating monthly financial report: < 30 seconds
+\end{itemize}
+
+\subsubsection{Interface Standards}
+\begin{itemize}
+    \item Conform to WCAG 2.1 Level AA accessibility standards
+    \item Support responsive design for screens 320px to 4K resolution
+    \item Maintain consistent navigation across all modules
+    \item Provide contextual help on all forms
+\end{itemize}
+
+\subsection{Reliability}
+
+\subsubsection{Availability}
+\begin{itemize}
+    \item \textbf{Indicator 1:} System availability of 99.9\% (8.76 hours maximum downtime per year)
+    \item \textbf{Indicator 2:} Scheduled maintenance windows limited to 4 hours per month during 2-6 AM EST
+\end{itemize}
+
+\subsubsection{Mean Time Between Failures (MTBF)}
+\begin{itemize}
+    \item Target MTBF: 720 hours (30 days) for critical components
+    \item Payment processing module: 2,160 hours (90 days)
+\end{itemize}
+
+\subsubsection{Mean Time To Repair (MTTR)}
+\begin{itemize}
+    \item Critical failures (payment processing, authentication): < 2 hours
+    \item Major failures (reporting, messaging): < 4 hours
+    \item Minor failures (UI issues, non-critical features): < 24 hours
+\end{itemize}
+
+\subsubsection{Accuracy}
+\begin{itemize}
+    \item Financial calculations accurate to 2 decimal places
+    \item Zero tolerance for payment processing errors
+    \item Date/time accuracy synchronized with NTP servers
+\end{itemize}
+
+\subsubsection{Bug Rates}
+\begin{itemize}
+    \item Critical bugs: 0 per release
+    \item Major bugs: < 2 per 10,000 lines of code
+    \item Minor bugs: < 5 per 10,000 lines of code
+\end{itemize}
+
+\subsection{Performance}
+
+\subsubsection{Response Times}
+\begin{itemize}
+    \item \textbf{Indicator 1:} Page load time: < 2 seconds for 95\% of requests
+    \item \textbf{Indicator 2:} Database queries: < 100ms for simple queries, < 1 second for complex reports
+\end{itemize}
+
+\subsubsection{Throughput}
+\begin{itemize}
+    \item Support 1,000 concurrent transactions per second
+    \item Process 50 payment transactions per second
+    \item Generate 100 reports per minute
+\end{itemize}
+
+\subsubsection{Capacity}
+\begin{itemize}
+    \item Support 10,000 concurrent users
+    \item Store 1 million property records
+    \item Maintain 7 years of historical data online
+    \item Handle 100,000 maintenance requests per month
+\end{itemize}
+
+\subsubsection{Resource Utilization}
+\begin{itemize}
+    \item CPU usage: < 70\% under normal load
+    \item Memory: < 4GB per application instance
+    \item Database storage: 100GB initial, scalable to 1TB
+    \item Network bandwidth: 100 Mbps minimum
+\end{itemize}
+
+\subsection{Supportability}
+
+\subsubsection{Coding Standards}
+\begin{itemize}
+    \item \textbf{Indicator 1:} Follow PSR-12 coding standard for PHP components
+    \item \textbf{Indicator 2:} Maintain minimum 80\% code coverage in unit tests
+\end{itemize}
+
+\subsubsection{Naming Conventions}
+\begin{itemize}
+    \item Database tables: snake\_case (e.g., rental\_units)
+    \item API endpoints: kebab-case (e.g., /api/rental-units)
+    \item Classes: PascalCase (e.g., RentalUnit)
+    \item Variables and functions: camelCase (e.g., getRentalUnit)
+\end{itemize}
+
+\subsubsection{Maintenance Access}
+\begin{itemize}
+    \item Remote diagnostic capabilities via secure VPN
+    \item Administrative dashboard for system monitoring
+    \item Automated error logging and reporting
+    \item Database maintenance utilities for optimization
+\end{itemize}
+
+\subsubsection{Class Libraries}
+\begin{itemize}
+    \item Laravel framework for PHP backend
+    \item React.js for frontend components
+    \item Bootstrap for UI consistency
+    \item Chart.js for data visualization
+\end{itemize}
+
+\subsection{Design Constraints}
+
+\subsubsection{Technology Stack}
+\begin{itemize}
+    \item Backend: PHP 8.1+ with Laravel Framework
+    \item Frontend: React.js 18+ with TypeScript
+    \item Database: PostgreSQL 14+
+    \item Cache: Redis 6+
+    \item Queue: RabbitMQ for async processing
+\end{itemize}
+
+\subsubsection{Architectural Constraints}
+\begin{itemize}
+    \item Microservices architecture for scalability
+    \item RESTful API design principles
+    \item Event-driven architecture for real-time updates
+    \item Multi-tenant database architecture with row-level security
+\end{itemize}
+
+\subsubsection{Purchased Components}
+\begin{itemize}
+    \item Moneris payment gateway integration
+    \item Twilio for SMS notifications
+    \item SendGrid for email delivery
+    \item AWS S3 for document storage
+\end{itemize}
+
+\subsubsection{Development Tools}
+\begin{itemize}
+    \item Git for version control
+    \item Docker for containerization
+    \item Jenkins for CI/CD pipeline
+    \item Jira for project management
+\end{itemize}
+
+\subsection{Online User Documentation and Help System Requirements}
+
+\subsubsection{Documentation Requirements}
+\begin{itemize}
+    \item Comprehensive user manual in PDF format
+    \item Interactive tutorials for new users
+    \item Video guides for complex operations
+    \item API documentation for integrations
+\end{itemize}
+
+\subsubsection{Help System Features}
+\begin{itemize}
+    \item Context-sensitive help on all screens
+    \item Searchable knowledge base
+    \item FAQ section organized by user role
+    \item Live chat support during business hours
+\end{itemize}
+
+\subsubsection{Accessibility}
+\begin{itemize}
+    \item Documentation available in English and French
+    \item Screen reader compatible help content
+    \item Printable quick reference guides
+    \item Mobile-optimized help interface
+\end{itemize}
+
+\subsection{Glossary}
+
+\begin{itemize}
+    \item \textbf{Lease:} Legal contract between landlord and tenant defining rental terms
+    \item \textbf{Unit:} Individual rental space within a property
+    \item \textbf{Grace Period:} Additional days after due date before late fees apply
+    \item \textbf{Proration:} Calculation of partial month's rent
+    \item \textbf{Security Deposit:} Advance payment held for potential damages
+    \item \textbf{Work Order:} Formal request for maintenance service
+    \item \textbf{Rent Roll:} Report showing all units with rental amounts and tenant information
+    \item \textbf{Vacancy Rate:} Percentage of unoccupied units
+    \item \textbf{PSP:} Payment Service Provider
+    \item \textbf{RBAC:} Role-Based Access Control
+    \item \textbf{Multi-tenancy:} Architecture supporting multiple independent customers
+    \item \textbf{Escrow:} Funds held in trust by third party
+\end{itemize}
+
+% APPENDICES
+
+\appendix
+
+\section{Time Log}
+
+\begin{longtable}{|p{2.5cm}|p{3cm}|p{1.5cm}|p{4cm}|p{3cm}|}
+\hline
+\textbf{Date} & \textbf{Task} & \textbf{Duration} & \textbf{Activity} & \textbf{Notes} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Date} & \textbf{Task} & \textbf{Duration} & \textbf{Activity} & \textbf{Notes} \\
+\hline
+\endhead
+
+2025-08-01 & Rebuttal Letter & 1.5h & Addressed reviewer comments & Created responses to all feedback \\
+\hline
+2025-08-01 & Vision Update & 2.0h & Fixed defects and inconsistencies & Updated based on D2 findings \\
+\hline
+2025-08-02 & Actor-Goal List & 1.0h & Identified all actors and goals & Section 2.1 \\
+\hline
+2025-08-02 & UC01-UC05 & 2.5h & Landlord use cases & Detailed specifications \\
+\hline
+2025-08-02 & UC06-UC09 & 2.0h & Landlord use cases continued & Completed landlord section \\
+\hline
+2025-08-03 & UC10-UC13 & 2.5h & Tenant use cases part 1 & Registration through maintenance \\
+\hline
+2025-08-03 & UC14-UC17 & 2.0h & Tenant use cases part 2 & Status tracking and communication \\
+\hline
+2025-08-03 & UC18-UC20 & 1.5h & Accounting use cases part 1 & Financial reporting \\
+\hline
+2025-08-04 & UC21-UC23 & 1.5h & Accounting use cases part 2 & Export and monitoring \\
+\hline
+2025-08-04 & UC24-UC26 & 1.5h & System admin use cases & User and system management \\
+\hline
+2025-08-04 & UML Diagrams & 3.0h & Created 4 required diagrams & Use case, sequence, activity, state \\
+\hline
+2025-08-05 & Supplementary Spec & 2.5h & Non-functional requirements & All sections completed \\
+\hline
+2025-08-05 & Review and Polish & 1.5h & Final review and formatting & Consistency check \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total Hours:}} & \textbf{25.0} & \\
+\hline
+\end{longtable}
+
+\section{Traceability Matrix}
+
+\begin{longtable}{|p{3cm}|p{4cm}|p{4cm}|p{3cm}|}
+\hline
+\textbf{Vision Feature} & \textbf{Use Cases} & \textbf{Supplementary Req} & \textbf{Priority} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Vision Feature} & \textbf{Use Cases} & \textbf{Supplementary Req} & \textbf{Priority} \\
+\hline
+\endhead
+
+Online Rent Payments & UC12, UC06, UC18 & Performance 4.5.1, Security & High \\
+\hline
+Lease Management & UC04, UC11 & Functionality 4.2.1, Reliability & High \\
+\hline
+Maintenance System & UC08, UC09, UC13, UC14 & Usability 4.3.2, Performance & High \\
+\hline
+Financial Reports & UC19, UC20, UC21 & Functionality 4.2.1, Accuracy & High \\
+\hline
+Role-Based Access & UC24, UC25 & Security, Supportability & High \\
+\hline
+Bilingual Support & All use cases & Usability 4.3.3, Documentation & Medium \\
+\hline
+Notifications & UC07, UC15 & Performance, Reliability & Medium \\
+\hline
+Provincial Compliance & UC04, UC22 & Functionality 4.2, Design 4.7 & High \\
+\hline
+Data Residency & UC26 & Design Constraints 4.7 & High \\
+\hline
+Seasonal Maintenance & UC08, UC09 & Functionality 4.2 & Low \\
+\hline
+\end{longtable}
+
+\section{Document Revision History}
+
+\begin{longtable}{|p{2cm}|p{2cm}|p{8cm}|p{2cm}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Author} \\
+\hline
+1.0 & 2025-07-11 & Initial Vision Document (D1) & C. Singh \\
+\hline
+2.0 & 2025-07-25 & Requirements Evaluation \& Risk Analysis (D2) & C. Singh \\
+\hline
+3.0 & 2025-08-05 & Complete SRS with Use Cases and Supplementary Specification (D3) & C. Singh \\
+\hline
+\end{longtable}
+
 \end{document}
