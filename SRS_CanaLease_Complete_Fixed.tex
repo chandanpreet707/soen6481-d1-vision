@@ -509,7 +509,6 @@ Email System &
 \hline
 \end{tabular}
 
-% Continue in the same document...
 
 % UC06: Track Rent Payments and Balances
 \subsubsection{UC06: Track Rent Payments and Balances}
@@ -757,257 +756,6 @@ Email System &
 \end{itemize} \\
 \hline
 \textbf{Post-Conditions:} & \\
-
-% Continue in the same document...
-
-% UC06: Track Rent Payments and Balances
-\subsubsection{UC06: Track Rent Payments and Balances}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC06 \\
-\hline
-\textbf{Use Case:} & Track Rent Payments and Balances \\
-\hline
-\textbf{Description:} & Landlord monitors rent payments, outstanding balances, and payment history. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & Landlord/Property Manager \\
-\hline
-\textbf{Supporting Actors:} & Accounting Personnel, Payment Gateway \\
-\hline
-\textbf{Stakeholders and} & \textbf{Landlord:} Needs accurate payment tracking \\
-\textbf{Interests:} & \textbf{Accounting:} Requires data for reports \\
-& \textbf{Tenant:} Wants payment confirmation \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item Active leases exist in system
-    \item Payment schedules are configured
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-\textbf{Success:} & 
-\begin{itemize}
-    \item Payment status updated
-    \item Balance calculated correctly
-    \item Reports available
-\end{itemize} \\
-\textbf{Failure:} & 
-\begin{itemize}
-    \item Data remains unchanged
-\end{itemize} \\
-\hline
-\textbf{Main Success} & 1. Landlord accesses payment tracking \\
-\textbf{Scenario:} & 2. System displays payment dashboard \\
-& 3. Landlord selects view criteria (property, date range, status) \\
-& 4. System retrieves payment records \\
-& 5. System calculates balances and totals \\
-& 6. System displays payment grid with status indicators \\
-& 7. Landlord can drill down to specific payments \\
-& 8. System shows payment details and history \\
-& 9. Landlord can export payment report \\
-\hline
-\textbf{Extensions:} & 
-\textbf{6a. Late payment detected:}
-\begin{itemize}
-    \item 6a1. System highlights in red
-    \item 6a2. System shows days overdue
-    \item 6a3. System suggests sending reminder
-\end{itemize}
-\textbf{7a. Payment dispute:}
-\begin{itemize}
-    \item 7a1. Landlord marks payment as disputed
-    \item 7a2. System creates investigation record
-\end{itemize} \\
-\hline
-\textbf{Special Requirements:} & 
-\begin{itemize}
-    \item Real-time payment updates
-    \item Integration with Canadian banks
-    \item Support for multiple payment methods
-\end{itemize} \\
-\hline
-\end{tabular}
-
-% UC07: Send Notices or Messages to Tenants
-\subsubsection{UC07: Send Notices or Messages to Tenants}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC07 \\
-\hline
-\textbf{Use Case:} & Send Notices or Messages to Tenants \\
-\hline
-\textbf{Description:} & Landlord sends official notices and communications to tenants. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & Landlord/Property Manager \\
-\hline
-\textbf{Supporting Actors:} & Email System, SMS Gateway \\
-\hline
-\textbf{Stakeholders and} & \textbf{Landlord:} Needs documented communication \\
-\textbf{Interests:} & \textbf{Tenant:} Requires timely notifications \\
-& \textbf{Legal:} Requires compliance with notice periods \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item Tenant contact information available
-    \item Notice templates configured
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-\textbf{Success:} & 
-\begin{itemize}
-    \item Message sent successfully
-    \item Delivery confirmed
-    \item Communication logged
-\end{itemize} \\
-\textbf{Failure:} & 
-\begin{itemize}
-    \item Message not sent
-    \item Error logged for retry
-\end{itemize} \\
-\hline
-\textbf{Main Success} & 1. Landlord selects communication option \\
-\textbf{Scenario:} & 2. System displays message types (notice, reminder, announcement) \\
-& 3. Landlord selects recipients (individual, unit, property, all) \\
-& 4. System loads appropriate template \\
-& 5. Landlord customizes message content \\
-& 6. System validates notice requirements (if legal notice) \\
-& 7. Landlord selects delivery method (email, SMS, both) \\
-& 8. System sends message \\
-& 9. System tracks delivery status \\
-& 10. System logs communication in tenant record \\
-\hline
-\textbf{Extensions:} & 
-\textbf{6a. Legal notice validation:}
-\begin{itemize}
-    \item 6a1. System checks provincial requirements
-    \item 6a2. System ensures proper notice period
-    \item 6a3. System requires confirmation if non-compliant
-\end{itemize}
-\textbf{8a. Delivery failure:}
-\begin{itemize}
-    \item 8a1. System attempts retry (3 times)
-    \item 8a2. System notifies landlord of failure
-    \item 8a3. System suggests alternative delivery
-\end{itemize} \\
-\hline
-\textbf{Special Requirements:} & 
-\begin{itemize}
-    \item Bilingual message support
-    \item Legal notice templates per province
-    \item Delivery confirmation tracking
-\end{itemize} \\
-\hline
-\end{tabular}
-
-% UC08: Assign Maintenance Tasks
-\subsubsection{UC08: Assign Maintenance Tasks}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC08 \\
-\hline
-\textbf{Use Case:} & Assign Maintenance Tasks \\
-\hline
-\textbf{Description:} & Landlord assigns maintenance requests to contractors or staff. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & Landlord/Property Manager \\
-\hline
-\textbf{Supporting Actors:} & Maintenance Contractor, Tenant \\
-\hline
-\textbf{Stakeholders and} & \textbf{Landlord:} Needs efficient task management \\
-\textbf{Interests:} & \textbf{Contractor:} Requires clear work orders \\
-& \textbf{Tenant:} Wants timely repairs \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item Maintenance request exists
-    \item Contractors are registered in system
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-\textbf{Success:} & 
-\begin{itemize}
-    \item Task assigned to contractor
-    \item Contractor notified
-    \item Tenant informed of assignment
-\end{itemize} \\
-\textbf{Failure:} & 
-\begin{itemize}
-    \item Task remains unassigned
-\end{itemize} \\
-\hline
-\textbf{Main Success} & 1. Landlord views pending maintenance requests \\
-\textbf{Scenario:} & 2. System displays requests sorted by priority \\
-& 3. Landlord selects a maintenance request \\
-& 4. System shows request details and history \\
-& 5. Landlord selects assign option \\
-& 6. System displays available contractors with skills/availability \\
-& 7. Landlord selects contractor and sets deadline \\
-& 8. System creates work order \\
-& 9. System notifies contractor via email/SMS \\
-& 10. System updates request status to "Assigned" \\
-& 11. System notifies tenant of assignment \\
-\hline
-\textbf{Extensions:} & 
-\textbf{6a. No available contractor:}
-\begin{itemize}
-    \item 6a1. System suggests external contractors
-    \item 6a2. Landlord can add new contractor
-\end{itemize}
-\textbf{7a. Emergency request:}
-\begin{itemize}
-    \item 7a1. System prioritizes emergency contractors
-    \item 7a2. System sends urgent notification
-    \item 7a3. System requires immediate confirmation
-\end{itemize} \\
-\hline
-\textbf{Special Requirements:} & 
-\begin{itemize}
-    \item Mobile notifications for contractors
-    \item Priority-based assignment rules
-    \item SLA tracking for response times
-\end{itemize} \\
-\hline
-\end{tabular}
-
-% UC09: View Maintenance Request History
-\subsubsection{UC09: View Maintenance Request History}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC09 \\
-\hline
-\textbf{Use Case:} & View Maintenance Request History \\
-\hline
-\textbf{Description:} & Users view historical maintenance requests and their resolutions. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & Landlord/Property Manager \\
-\hline
-\textbf{Supporting Actors:} & Tenant, Maintenance Contractor \\
-\hline
-\textbf{Stakeholders and} & \textbf{Landlord:} Needs maintenance analytics \\
-\textbf{Interests:} & \textbf{Tenant:} Wants to see request history \\
-& \textbf{Contractor:} Needs work history \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item User is authenticated
-    \item Historical data exists
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-
-% Continuing UC09
 \textbf{Success:} & 
 \begin{itemize}
     \item History displayed successfully
@@ -1048,7 +796,6 @@ Email System &
 \hline
 \end{tabular}
 
-% TENANT USE CASES (UC10-UC17)
 
 % UC10: Register/Login to Tenant Portal
 \subsubsection{UC10: Register/Login to Tenant Portal}
@@ -1356,7 +1103,7 @@ Email System &
 \hline
 \end{tabular}
 
-% UC14-UC17: Continue Tenant Use Cases
+% UC14
 \subsubsection{UC14: View Maintenance Status}
 
 \begin{tabular}{|p{3cm}|p{11cm}|}
@@ -1416,149 +1163,6 @@ Email System &
 \end{itemize} \\
 \hline
 \end{tabular}
-
-% UC15-UC17 and Accounting UC18-UC23 follow same pattern...
-% Due to length, I'll provide the structure for the remaining ones
-
-% ACCOUNTING PERSONNEL USE CASES (UC18-UC23)
-
-\subsubsection{UC18: View Rent Collection Summary}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC18 \\
-\hline
-\textbf{Use Case:} & View Rent Collection Summary \\
-\hline
-\textbf{Description:} & Accounting personnel view comprehensive rent collection reports. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & Accounting Personnel \\
-\hline
-\textbf{Supporting Actors:} & None \\
-\hline
-\textbf{Stakeholders and} & \textbf{Accounting:} Needs financial overview \\
-\textbf{Interests:} & \textbf{Management:} Requires revenue tracking \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item User has accounting role
-    \item Payment data exists
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-\textbf{Success:} & 
-\begin{itemize}
-    \item Summary displayed
-    \item Reports available for export
-\end{itemize} \\
-\textbf{Failure:} & 
-\begin{itemize}
-    \item Error displayed
-\end{itemize} \\
-\hline
-\textbf{Main Success} & 1. Accounting user accesses financial dashboard \\
-\textbf{Scenario:} & 2. System displays summary options \\
-& 3. User selects date range and properties \\
-& 4. System calculates collection metrics \\
-& 5. System displays total collected, outstanding, delinquent \\
-& 6. System shows collection rate percentage \\
-& 7. User can drill down by property/unit \\
-& 8. System generates detailed breakdown \\
-& 9. User exports report to Excel/PDF \\
-\hline
-\textbf{Extensions:} & 
-\textbf{5a. Discrepancies found:}
-\begin{itemize}
-    \item 5a1. System highlights anomalies
-    \item 5a2. User investigates specific transactions
-\end{itemize} \\
-\hline
-\textbf{Special Requirements:} & 
-\begin{itemize}
-    \item Support fiscal year reporting
-    \item Multi-currency if needed
-    \item Audit trail maintained
-\end{itemize} \\
-\hline
-\end{tabular}
-
-% SYSTEM ADMINISTRATOR USE CASES (UC24-UC26)
-
-\subsubsection{UC24: Manage User Accounts}
-
-\begin{tabular}{|p{3cm}|p{11cm}|}
-\hline
-\textbf{Id:} & UC24 \\
-\hline
-\textbf{Use Case:} & Manage User Accounts \\
-\hline
-\textbf{Description:} & System administrator creates, modifies, and deactivates user accounts. \\
-\hline
-\textbf{Level:} & User-goal \\
-\hline
-\textbf{Primary Actor:} & System Administrator \\
-\hline
-\textbf{Supporting Actors:} & Email System \\
-\hline
-\textbf{Stakeholders and} & \textbf{Admin:} Needs user management \\
-\textbf{Interests:} & \textbf{Security:} Requires access control \\
-& \textbf{Users:} Need appropriate access \\
-\hline
-\textbf{Pre-Conditions:} & 
-\begin{itemize}
-    \item Admin is authenticated
-    \item Has admin privileges
-\end{itemize} \\
-\hline
-\textbf{Post-Conditions:} & \\
-\textbf{Success:} & 
-\begin{itemize}
-    \item User account created/modified/deactivated
-    \item User notified of changes
-    \item Audit log updated
-\end{itemize} \\
-\textbf{Failure:} & 
-\begin{itemize}
-    \item No changes made
-    \item Error logged
-\end{itemize} \\
-\hline
-\textbf{Main Success} & 1. Admin accesses user management \\
-\textbf{Scenario:} & 2. System displays user list with search \\
-& 3. Admin selects action (create/edit/deactivate) \\
-& 4. System presents user form \\
-& 5. Admin enters/modifies user details \\
-& 6. Admin assigns role (tenant, landlord, accounting, admin) \\
-& 7. System validates information \\
-& 8. Admin confirms changes \\
-& 9. System updates user database \\
-& 10. System sends notification to user \\
-& 11. System logs administrative action \\
-\hline
-\textbf{Extensions:} & 
-\textbf{3a. Bulk operations:}
-\begin{itemize}
-    \item 3a1. Admin selects multiple users
-    \item 3a2. System applies bulk action
-\end{itemize}
-\textbf{6a. Custom permissions:}
-\begin{itemize}
-    \item 6a1. Admin defines granular permissions
-    \item 6a2. System creates custom role
-\end{itemize} \\
-\hline
-\textbf{Special Requirements:} & 
-\begin{itemize}
-    \item Complete audit trail
-    \item Cannot delete own admin account
-    \item 2FA for admin operations
-\end{itemize} \\
-\hline
-\end{tabular}
-
-% Continuing with remaining use cases...
 
 % UC15: Communicate with Property Manager
 \subsubsection{UC15: Communicate with Property Manager}
@@ -1749,7 +1353,71 @@ Email System &
 \hline
 \end{tabular}
 
-% Remaining Accounting Use Cases UC19-UC23
+% U18 
+
+\subsubsection{UC18: View Rent Collection Summary}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC18 \\
+\hline
+\textbf{Use Case:} & View Rent Collection Summary \\
+\hline
+\textbf{Description:} & Accounting personnel view comprehensive rent collection reports. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & Accounting Personnel \\
+\hline
+\textbf{Supporting Actors:} & None \\
+\hline
+\textbf{Stakeholders and} & \textbf{Accounting:} Needs financial overview \\
+\textbf{Interests:} & \textbf{Management:} Requires revenue tracking \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item User has accounting role
+    \item Payment data exists
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Summary displayed
+    \item Reports available for export
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item Error displayed
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. Accounting user accesses financial dashboard \\
+\textbf{Scenario:} & 2. System displays summary options \\
+& 3. User selects date range and properties \\
+& 4. System calculates collection metrics \\
+& 5. System displays total collected, outstanding, delinquent \\
+& 6. System shows collection rate percentage \\
+& 7. User can drill down by property/unit \\
+& 8. System generates detailed breakdown \\
+& 9. User exports report to Excel/PDF \\
+\hline
+\textbf{Extensions:} & 
+\textbf{5a. Discrepancies found:}
+\begin{itemize}
+    \item 5a1. System highlights anomalies
+    \item 5a2. User investigates specific transactions
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Support fiscal year reporting
+    \item Multi-currency if needed
+    \item Audit trail maintained
+\end{itemize} \\
+\hline
+\end{tabular}
+
+% UC19: 
 
 \subsubsection{UC19: Record Payments and Adjustments}
 
@@ -1814,6 +1482,7 @@ Email System &
 \hline
 \end{tabular}
 
+% UC20: 
 \subsubsection{UC20: Generate Income/Expense Reports}
 
 \begin{tabular}{|p{3cm}|p{11cm}|}
@@ -1876,7 +1545,419 @@ Email System &
 \hline
 \end{tabular}
 
-% Continue with UC21-UC26...
+
+% UC21: Export Financial Data
+\subsubsection{UC21: Export Financial Data}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC21 \\
+\hline
+\textbf{Use Case:} & Export Financial Data \\
+\hline
+\textbf{Description:} & Export financial data in various formats for external use. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & Accounting Personnel \\
+\hline
+\textbf{Supporting Actors:} & None \\
+\hline
+\textbf{Stakeholders and} & \textbf{Accounting:} Needs data export \\
+\textbf{Interests:} & \textbf{Tax authorities:} Require specific formats \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item User has export privileges
+    \item Data exists for export
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Data exported successfully
+    \item Export logged
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item Export failed
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. User selects export option \\
+\textbf{Scenario:} & 2. System displays export parameters \\
+& 3. User selects data type and date range \\
+& 4. User chooses format (CSV, PDF, Excel, QuickBooks) \\
+& 5. System validates selection \\
+& 6. System retrieves data \\
+& 7. System formats data \\
+& 8. System generates export file \\
+& 9. User downloads file \\
+& 10. System logs export activity \\
+\hline
+\textbf{Extensions:} & 
+\textbf{4a. Tax format:}
+\begin{itemize}
+    \item 4a1. User selects T776 format
+    \item 4a2. System applies CRA formatting
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Support Canadian tax formats
+    \item Encrypted file option
+\end{itemize} \\
+\hline
+\end{tabular}
+
+% UC22: Apply Late Fees and Penalties
+\subsubsection{UC22: Apply Late Fees and Penalties}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC22 \\
+\hline
+\textbf{Use Case:} & Apply Late Fees and Penalties \\
+\hline
+\textbf{Description:} & System automatically or manually applies late fees to overdue accounts. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & Accounting Personnel \\
+\hline
+\textbf{Supporting Actors:} & System (for automatic application) \\
+\hline
+\textbf{Stakeholders and} & \textbf{Accounting:} Ensures fee application \\
+\textbf{Interests:} & \textbf{Tenant:} Needs fee transparency \\
+& \textbf{Landlord:} Requires fee enforcement \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item Overdue payments exist
+    \item Fee schedule configured
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Fees applied to accounts
+    \item Tenants notified
+    \item Ledger updated
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item Fees not applied
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. System identifies overdue accounts \\
+\textbf{Scenario:} & 2. System calculates days overdue \\
+& 3. System determines fee amount per policy \\
+& 4. Accounting user reviews proposed fees \\
+& 5. User can adjust fees if needed \\
+& 6. User approves fee application \\
+& 7. System applies fees to accounts \\
+& 8. System updates balances \\
+& 9. System sends fee notices to tenants \\
+& 10. System logs fee application \\
+\hline
+\textbf{Extensions:} & 
+\textbf{5a. Fee waiver:}
+\begin{itemize}
+    \item 5a1. User selects waiver option
+    \item 5a2. User provides reason
+    \item 5a3. System requires approval
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Provincial maximum fee limits
+    \item Grace period configuration
+\end{itemize} \\
+\hline
+\end{tabular}
+
+% UC23: Monitor Outstanding Balances
+\subsubsection{UC23: Monitor Outstanding Balances}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC23 \\
+\hline
+\textbf{Use Case:} & Monitor Outstanding Balances \\
+\hline
+\textbf{Description:} & Track and manage accounts with outstanding balances. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & Accounting Personnel \\
+\hline
+\textbf{Supporting Actors:} & Landlord/Property Manager \\
+\hline
+\textbf{Stakeholders and} & \textbf{Accounting:} Needs aged receivables \\
+\textbf{Interests:} & \textbf{Management:} Requires collection metrics \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item Payment records exist
+    \item User has viewing privileges
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Outstanding balances displayed
+    \item Reports available
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item Error displayed
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. User accesses receivables dashboard \\
+\textbf{Scenario:} & 2. System calculates outstanding amounts \\
+& 3. System categorizes by age (30/60/90+ days) \\
+& 4. System displays aging report \\
+& 5. User can filter by property/tenant \\
+& 6. System shows collection priority list \\
+& 7. User can initiate collection actions \\
+& 8. System tracks collection efforts \\
+& 9. User exports aging report \\
+\hline
+\textbf{Extensions:} & 
+\textbf{7a. Send collection notice:}
+\begin{itemize}
+    \item 7a1. User selects accounts
+    \item 7a2. System generates notices
+    \item 7a3. System sends via email/mail
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Real-time balance updates
+    \item Collection history tracking
+\end{itemize} \\
+\hline
+\end{tabular}
+
+% SYSTEM ADMINISTRATOR USE CASES (UC24)
+
+\subsubsection{UC24: Manage User Accounts}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC24 \\
+\hline
+\textbf{Use Case:} & Manage User Accounts \\
+\hline
+\textbf{Description:} & System administrator creates, modifies, and deactivates user accounts. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & System Administrator \\
+\hline
+\textbf{Supporting Actors:} & Email System \\
+\hline
+\textbf{Stakeholders and} & \textbf{Admin:} Needs user management \\
+\textbf{Interests:} & \textbf{Security:} Requires access control \\
+& \textbf{Users:} Need appropriate access \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item Admin is authenticated
+    \item Has admin privileges
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item User account created/modified/deactivated
+    \item User notified of changes
+    \item Audit log updated
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item No changes made
+    \item Error logged
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. Admin accesses user management \\
+\textbf{Scenario:} & 2. System displays user list with search \\
+& 3. Admin selects action (create/edit/deactivate) \\
+& 4. System presents user form \\
+& 5. Admin enters/modifies user details \\
+& 6. Admin assigns role (tenant, landlord, accounting, admin) \\
+& 7. System validates information \\
+& 8. Admin confirms changes \\
+& 9. System updates user database \\
+& 10. System sends notification to user \\
+& 11. System logs administrative action \\
+\hline
+\textbf{Extensions:} & 
+\textbf{3a. Bulk operations:}
+\begin{itemize}
+    \item 3a1. Admin selects multiple users
+    \item 3a2. System applies bulk action
+\end{itemize}
+\textbf{6a. Custom permissions:}
+\begin{itemize}
+    \item 6a1. Admin defines granular permissions
+    \item 6a2. System creates custom role
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Complete audit trail
+    \item Cannot delete own admin account
+    \item 2FA for admin operations
+\end{itemize} \\
+\hline
+\end{tabular}
+
+
+% UC25: Assign Roles and Access Rights
+\subsubsection{UC25: Assign Roles and Access Rights}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC25 \\
+\hline
+\textbf{Use Case:} & Assign Roles and Access Rights \\
+\hline
+\textbf{Description:} & Administrator assigns and manages user roles and permissions. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & System Administrator \\
+\hline
+\textbf{Supporting Actors:} & None \\
+\hline
+\textbf{Stakeholders and} & \textbf{Admin:} Needs access control \\
+\textbf{Interests:} & \textbf{Security:} Requires proper authorization \\
+& \textbf{Users:} Need appropriate access \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item Admin is authenticated with 2FA
+    \item User accounts exist
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Roles assigned/modified
+    \item Permissions updated
+    \item Changes logged
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item No changes made
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. Admin accesses role management \\
+\textbf{Scenario:} & 2. System displays users and current roles \\
+& 3. Admin selects user to modify \\
+& 4. System shows available roles \\
+& 5. Admin assigns role(s) \\
+& 6. System displays permission summary \\
+& 7. Admin can customize permissions \\
+& 8. Admin confirms changes \\
+& 9. System updates access rights \\
+& 10. System notifies user of changes \\
+& 11. System logs role assignment \\
+\hline
+\textbf{Extensions:} & 
+\textbf{7a. Custom role:}
+\begin{itemize}
+    \item 7a1. Admin creates new role
+    \item 7a2. Admin defines permissions
+    \item 7a3. System saves custom role
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Principle of least privilege
+    \item Role inheritance support
+    \item Audit trail for all changes
+\end{itemize} \\
+\hline
+\end{tabular}
+
+% UC26: Configure System Settings
+\subsubsection{UC26: Configure System Settings}
+
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Id:} & UC26 \\
+\hline
+\textbf{Use Case:} & Configure System Settings \\
+\hline
+\textbf{Description:} & Administrator configures system-wide settings and parameters. \\
+\hline
+\textbf{Level:} & User-goal \\
+\hline
+\textbf{Primary Actor:} & System Administrator \\
+\hline
+\textbf{Supporting Actors:} & None \\
+\hline
+\textbf{Stakeholders and} & \textbf{Admin:} Needs system configuration \\
+\textbf{Interests:} & \textbf{All users:} Affected by settings \\
+& \textbf{Compliance:} Requires proper configuration \\
+\hline
+\textbf{Pre-Conditions:} & 
+\begin{itemize}
+    \item Admin has configuration privileges
+    \item System is in maintenance window
+\end{itemize} \\
+\hline
+\textbf{Post-Conditions:} & \\
+\textbf{Success:} & 
+\begin{itemize}
+    \item Settings updated
+    \item Changes take effect
+    \item Configuration backed up
+\end{itemize} \\
+\textbf{Failure:} & 
+\begin{itemize}
+    \item Settings unchanged
+    \item Error logged
+\end{itemize} \\
+\hline
+\textbf{Main Success} & 1. Admin accesses system configuration \\
+\textbf{Scenario:} & 2. System displays configuration categories \\
+& 3. Admin selects category (payment, notification, security, etc.) \\
+& 4. System shows current settings \\
+& 5. Admin modifies settings \\
+& 6. System validates changes \\
+& 7. Admin tests configuration \\
+& 8. System shows impact preview \\
+& 9. Admin confirms changes \\
+& 10. System applies new settings \\
+& 11. System creates configuration backup \\
+& 12. System logs configuration change \\
+\hline
+\textbf{Extensions:} & 
+\textbf{6a. Invalid configuration:}
+\begin{itemize}
+    \item 6a1. System shows error
+    \item 6a2. System suggests valid values
+    \item 6a3. Return to step 5
+\end{itemize}
+\textbf{10a. Rollback needed:}
+\begin{itemize}
+    \item 10a1. Admin initiates rollback
+    \item 10a2. System restores previous configuration
+\end{itemize} \\
+\hline
+\textbf{Special Requirements:} & 
+\begin{itemize}
+    \item Configuration versioning
+    \item Rollback capability
+    \item Change notification to affected users
+\end{itemize} \\
+\hline
+\end{tabular}
+
+
+
 % Due to length, showing the UML Diagrams section
 
 \section{UML Diagrams}
