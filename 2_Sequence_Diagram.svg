@@ -1,0 +1,121 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="500" y="30" font-size="18" font-weight="bold" text-anchor="middle">
+    Sequence Diagram: Registering New Tenant with Property
+  </text>
+  
+  <!-- Actors/Objects -->
+  <!-- Landlord -->
+  <rect x="50" y="60" width="100" height="40" fill="#FFEB3B" stroke="black" stroke-width="2"/>
+  <text x="100" y="85" text-anchor="middle" font-size="12" font-weight="bold">Landlord</text>
+  <line x1="100" y1="100" x2="100" y2="650" stroke="black" stroke-dasharray="5,3"/>
+  
+  <!-- System -->
+  <rect x="300" y="60" width="100" height="40" fill="#2196F3" stroke="black" stroke-width="2"/>
+  <text x="350" y="85" text-anchor="middle" font-size="12" font-weight="bold">System</text>
+  <line x1="350" y1="100" x2="350" y2="650" stroke="black" stroke-dasharray="5,3"/>
+  
+  <!-- Database -->
+  <rect x="550" y="60" width="100" height="40" fill="#4CAF50" stroke="black" stroke-width="2"/>
+  <text x="600" y="85" text-anchor="middle" font-size="12" font-weight="bold">Database</text>
+  <line x1="600" y1="100" x2="600" y2="650" stroke="black" stroke-dasharray="5,3"/>
+  
+  <!-- Email Service -->
+  <rect x="800" y="60" width="120" height="40" fill="#f44336" stroke="black" stroke-width="2"/>
+  <text x="860" y="85" text-anchor="middle" font-size="12" font-weight="bold">Email Service</text>
+  <line x1="860" y1="100" x2="860" y2="650" stroke="black" stroke-dasharray="5,3"/>
+  
+  <!-- Activation Boxes (gray rectangles showing when objects are active) -->
+  <rect x="95" y="130" width="10" height="480" fill="#CCCCCC" stroke="black"/>
+  <rect x="345" y="140" width="10" height="460" fill="#CCCCCC" stroke="black"/>
+  <rect x="595" y="170" width="10" height="370" fill="#CCCCCC" stroke="black"/>
+  <rect x="855" y="410" width="10" height="120" fill="#CCCCCC" stroke="black"/>
+  
+  <!-- Messages -->
+  <!-- 1. selectNewTenant() -->
+  <line x1="105" y1="140" x2="345" y2="140" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="225" y="135" text-anchor="middle" font-size="11">1: selectNewTenant()</text>
+  
+  <!-- 2. checkAvailableUnits() -->
+  <line x1="355" y1="170" x2="595" y2="170" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="475" y="165" text-anchor="middle" font-size="11">2: checkAvailableUnits()</text>
+  
+  <!-- 3. return unitList -->
+  <line x1="595" y1="200" x2="355" y2="200" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="475" y="195" text-anchor="middle" font-size="11">3: return unitList</text>
+  
+  <!-- 4. displayUnits() -->
+  <line x1="345" y1="230" x2="105" y2="230" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="225" y="225" text-anchor="middle" font-size="11">4: displayUnits()</text>
+  
+  <!-- 5. enterTenantInfo() -->
+  <line x1="105" y1="260" x2="345" y2="260" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="225" y="255" text-anchor="middle" font-size="11">5: enterTenantInfo()</text>
+  
+  <!-- 6. validateTenant() -->
+  <line x1="355" y1="290" x2="595" y2="290" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="475" y="285" text-anchor="middle" font-size="11">6: validateTenant()</text>
+  
+  <!-- 7. validation result -->
+  <line x1="595" y1="320" x2="355" y2="320" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="475" y="315" text-anchor="middle" font-size="11">7: validation result</text>
+  
+  <!-- 8. assignUnit() -->
+  <line x1="105" y1="350" x2="345" y2="350" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="225" y="345" text-anchor="middle" font-size="11">8: assignUnit()</text>
+  
+  <!-- 9. createLease() -->
+  <line x1="355" y1="380" x2="595" y2="380" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="475" y="375" text-anchor="middle" font-size="11">9: createLease()</text>
+  
+  <!-- 10. updateUnitStatus() -->
+  <line x1="355" y1="410" x2="595" y2="410" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="475" y="405" text-anchor="middle" font-size="11">10: updateUnitStatus()</text>
+  
+  <!-- 11. sendWelcomeEmail() -->
+  <line x1="355" y1="440" x2="855" y2="440" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="705" y="435" text-anchor="middle" font-size="11">11: sendWelcomeEmail()</text>
+  
+  <!-- 12. emailConfirmation -->
+  <line x1="855" y1="470" x2="355" y2="470" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="705" y="465" text-anchor="middle" font-size="11">12: emailConfirmation</text>
+  
+  <!-- 13. createTenantAccount() -->
+  <line x1="355" y1="500" x2="595" y2="500" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="475" y="495" text-anchor="middle" font-size="11">13: createTenantAccount()</text>
+  
+  <!-- 14. accountDetails -->
+  <line x1="595" y1="530" x2="355" y2="530" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="475" y="525" text-anchor="middle" font-size="11">14: accountDetails</text>
+  
+  <!-- 15. sendCredentials() -->
+  <line x1="355" y1="560" x2="855" y2="560" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="705" y="555" text-anchor="middle" font-size="11">15: sendCredentials()</text>
+  
+  <!-- 16. confirmationMessage() -->
+  <line x1="345" y1="590" x2="105" y2="590" stroke="black" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+  <text x="225" y="585" text-anchor="middle" font-size="11">16: confirmationMessage()</text>
+  
+  <!-- Notes/Comments -->
+  <rect x="650" y="290" width="180" height="60" fill="#FFFFCC" stroke="black" stroke-dasharray="2,2"/>
+  <text x="740" y="310" text-anchor="middle" font-size="10">Note: Validation includes</text>
+  <text x="740" y="325" text-anchor="middle" font-size="10">checking for duplicate</text>
+  <text x="740" y="340" text-anchor="middle" font-size="10">tenants and credit check</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <text x="50" y="680" font-size="10" font-weight="bold">Legend:</text>
+  <line x1="100" y1="680" x2="150" y2="680" stroke="black"/>
+  <text x="155" y="683" font-size="10">Synchronous call</text>
+  <line x1="250" y1="680" x2="300" y2="680" stroke="black" stroke-dasharray="3,3"/>
+  <text x="305" y="683" font-size="10">Return/Response</text>
+  <rect x="400" y="673" width="10" height="10" fill="#CCCCCC" stroke="black"/>
+  <text x="415" y="683" font-size="10">Active object</text>
+</svg>

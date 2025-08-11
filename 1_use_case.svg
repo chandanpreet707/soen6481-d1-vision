@@ -1,0 +1,207 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="30" font-size="20" font-weight="bold" text-anchor="middle">
+    CanaLease Property Management System - Use Case Diagram
+  </text>
+  
+  <!-- System Boundary -->
+  <rect x="200" y="50" width="800" height="820" fill="none" stroke="black" stroke-width="2"/>
+  <text x="600" y="75" font-size="16" font-weight="bold" text-anchor="middle">
+    System Boundary
+  </text>
+  
+  <!-- Actors (Left Side) -->
+  <rect x="50" y="150" width="100" height="40" fill="white" stroke="black"/>
+  <text x="100" y="175" text-anchor="middle" font-size="12">Landlord/PM</text>
+  
+  <rect x="50" y="350" width="100" height="40" fill="white" stroke="black"/>
+  <text x="100" y="375" text-anchor="middle" font-size="12">Tenant</text>
+  
+  <rect x="50" y="550" width="100" height="40" fill="white" stroke="black"/>
+  <text x="100" y="575" text-anchor="middle" font-size="12">Accounting</text>
+  
+  <rect x="50" y="750" width="100" height="40" fill="white" stroke="black"/>
+  <text x="100" y="775" text-anchor="middle" font-size="12">Admin</text>
+  
+  <!-- Actors (Right Side) -->
+  <rect x="1050" y="250" width="100" height="40" fill="white" stroke="black"/>
+  <text x="1100" y="275" text-anchor="middle" font-size="12">Contractor</text>
+  
+  <rect x="1050" y="450" width="100" height="40" fill="white" stroke="black"/>
+  <text x="1100" y="475" text-anchor="middle" font-size="12">Payment Gateway</text>
+  
+  <rect x="1050" y="650" width="100" height="40" fill="white" stroke="black"/>
+  <text x="1100" y="675" text-anchor="middle" font-size="12">Email System</text>
+  
+  <!-- Landlord Use Cases (UC01-UC09) - Yellow -->
+  <!-- Row 1 -->
+  <ellipse cx="300" cy="120" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="300" y="115" text-anchor="middle" font-size="11">UC01: Manage</text>
+  <text x="300" y="130" text-anchor="middle" font-size="11">Properties</text>
+  
+  <ellipse cx="450" cy="120" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="450" y="115" text-anchor="middle" font-size="11">UC02: Manage</text>
+  <text x="450" y="130" text-anchor="middle" font-size="11">Units</text>
+  
+  <ellipse cx="600" cy="120" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="600" y="115" text-anchor="middle" font-size="11">UC03: View</text>
+  <text x="600" y="130" text-anchor="middle" font-size="11">Property Details</text>
+  
+  <!-- Row 2 -->
+  <ellipse cx="300" cy="200" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="300" y="195" text-anchor="middle" font-size="11">UC04: Create</text>
+  <text x="300" y="210" text-anchor="middle" font-size="11">Lease</text>
+  
+  <ellipse cx="450" cy="200" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="450" y="195" text-anchor="middle" font-size="11">UC05: Manage</text>
+  <text x="450" y="210" text-anchor="middle" font-size="11">Tenants</text>
+  
+  <ellipse cx="600" cy="200" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="600" y="195" text-anchor="middle" font-size="11">UC06: Track</text>
+  <text x="600" y="210" text-anchor="middle" font-size="11">Payments</text>
+  
+  <!-- Row 3 -->
+  <ellipse cx="750" cy="120" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="750" y="115" text-anchor="middle" font-size="11">UC07: Send</text>
+  <text x="750" y="130" text-anchor="middle" font-size="11">Notices</text>
+  
+  <ellipse cx="900" cy="120" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="900" y="115" text-anchor="middle" font-size="11">UC08: Assign</text>
+  <text x="900" y="130" text-anchor="middle" font-size="11">Maintenance</text>
+  
+  <ellipse cx="750" cy="200" rx="60" ry="30" fill="#FFEB3B" stroke="black"/>
+  <text x="750" y="195" text-anchor="middle" font-size="11">UC09: View</text>
+  <text x="750" y="210" text-anchor="middle" font-size="11">Maint History</text>
+  
+  <!-- Tenant Use Cases (UC10-UC17) - Green -->
+  <!-- Row 1 -->
+  <ellipse cx="300" cy="320" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="300" y="315" text-anchor="middle" font-size="11">UC10: Register/</text>
+  <text x="300" y="330" text-anchor="middle" font-size="11">Login</text>
+  
+  <ellipse cx="450" cy="320" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="450" y="315" text-anchor="middle" font-size="11">UC11: View</text>
+  <text x="450" y="330" text-anchor="middle" font-size="11">Lease</text>
+  
+  <ellipse cx="600" cy="320" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="600" y="315" text-anchor="middle" font-size="11">UC12: Pay</text>
+  <text x="600" y="330" text-anchor="middle" font-size="11">Rent</text>
+  
+  <ellipse cx="750" cy="320" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="750" y="315" text-anchor="middle" font-size="11">UC13: Submit</text>
+  <text x="750" y="330" text-anchor="middle" font-size="11">Maint Request</text>
+  
+  <!-- Row 2 -->
+  <ellipse cx="300" cy="400" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="300" y="395" text-anchor="middle" font-size="11">UC14: View</text>
+  <text x="300" y="410" text-anchor="middle" font-size="11">Maint Status</text>
+  
+  <ellipse cx="450" cy="400" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="450" y="395" text-anchor="middle" font-size="11">UC15: Message</text>
+  <text x="450" y="410" text-anchor="middle" font-size="11">Manager</text>
+  
+  <ellipse cx="600" cy="400" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="600" y="395" text-anchor="middle" font-size="11">UC16: View</text>
+  <text x="600" y="410" text-anchor="middle" font-size="11">Pay History</text>
+  
+  <ellipse cx="750" cy="400" rx="60" ry="30" fill="#4CAF50" stroke="black"/>
+  <text x="750" y="395" text-anchor="middle" font-size="11">UC17: Update</text>
+  <text x="750" y="410" text-anchor="middle" font-size="11">Info</text>
+  
+  <!-- Accounting Use Cases (UC18-UC23) - Blue -->
+  <!-- Row 1 -->
+  <ellipse cx="300" cy="520" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="300" y="515" text-anchor="middle" font-size="11">UC18: View</text>
+  <text x="300" y="530" text-anchor="middle" font-size="11">Collection</text>
+  
+  <ellipse cx="450" cy="520" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="450" y="515" text-anchor="middle" font-size="11">UC19: Record</text>
+  <text x="450" y="530" text-anchor="middle" font-size="11">Payments</text>
+  
+  <ellipse cx="600" cy="520" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="600" y="515" text-anchor="middle" font-size="11">UC20: Generate</text>
+  <text x="600" y="530" text-anchor="middle" font-size="11">Reports</text>
+  
+  <!-- Row 2 -->
+  <ellipse cx="300" cy="600" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="300" y="595" text-anchor="middle" font-size="11">UC21: Export</text>
+  <text x="300" y="610" text-anchor="middle" font-size="11">Data</text>
+  
+  <ellipse cx="450" cy="600" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="450" y="595" text-anchor="middle" font-size="11">UC22: Apply</text>
+  <text x="450" y="610" text-anchor="middle" font-size="11">Late Fees</text>
+  
+  <ellipse cx="600" cy="600" rx="60" ry="30" fill="#2196F3" stroke="black"/>
+  <text x="600" y="595" text-anchor="middle" font-size="11">UC23: Monitor</text>
+  <text x="600" y="610" text-anchor="middle" font-size="11">Balances</text>
+  
+  <!-- Admin Use Cases (UC24-UC26) - Red -->
+  <ellipse cx="300" cy="750" rx="60" ry="30" fill="#f44336" stroke="black"/>
+  <text x="300" y="745" text-anchor="middle" font-size="11">UC24: Manage</text>
+  <text x="300" y="760" text-anchor="middle" font-size="11">Users</text>
+  
+  <ellipse cx="450" cy="750" rx="60" ry="30" fill="#f44336" stroke="black"/>
+  <text x="450" y="745" text-anchor="middle" font-size="11">UC25: Assign</text>
+  <text x="450" y="760" text-anchor="middle" font-size="11">Roles</text>
+  
+  <ellipse cx="600" cy="750" rx="60" ry="30" fill="#f44336" stroke="black"/>
+  <text x="600" y="745" text-anchor="middle" font-size="11">UC26: Configure</text>
+  <text x="600" y="760" text-anchor="middle" font-size="11">System</text>
+  
+  <!-- Common Use Case - Gray -->
+  <ellipse cx="900" cy="200" rx="60" ry="30" fill="#9E9E9E" stroke="black"/>
+  <text x="900" y="200" text-anchor="middle" font-size="11">Authenticate</text>
+  
+  <!-- Actor Connections -->
+  <!-- Landlord connections -->
+  <line x1="150" y1="170" x2="240" y2="120" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="390" y2="120" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="540" y2="120" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="240" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="390" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="540" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="690" y2="120" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="840" y2="120" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="170" x2="690" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  
+  <!-- Tenant connections -->
+  <line x1="150" y1="370" x2="240" y2="320" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="390" y2="320" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="540" y2="320" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="690" y2="320" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="240" y2="400" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="390" y2="400" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="540" y2="400" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="370" x2="690" y2="400" stroke="black" marker-end="url(#arrowhead)"/>
+  
+  <!-- Accounting connections -->
+  <line x1="150" y1="570" x2="240" y2="520" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="570" x2="390" y2="520" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="570" x2="540" y2="520" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="570" x2="240" y2="600" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="570" x2="390" y2="600" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="570" x2="540" y2="600" stroke="black" marker-end="url(#arrowhead)"/>
+  
+  <!-- Admin connections -->
+  <line x1="150" y1="770" x2="240" y2="750" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="770" x2="390" y2="750" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="770" x2="540" y2="750" stroke="black" marker-end="url(#arrowhead)"/>
+  
+  <!-- Supporting Actor connections -->
+  <line x1="960" y1="120" x2="1050" y2="270" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="320" x2="1050" y2="470" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="810" y1="120" x2="1050" y2="670" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="810" y1="320" x2="1050" y2="670" stroke="black" marker-end="url(#arrowhead)"/>
+  
+  <!-- Include relationships (dashed) -->
+  <line x1="360" y1="320" x2="840" y2="200" stroke="black" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="630" y="265" font-size="10" font-style="italic">«include»</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+</svg>

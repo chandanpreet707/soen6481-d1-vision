@@ -1,0 +1,170 @@
+<svg width="1100" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="550" y="30" font-size="18" font-weight="bold" text-anchor="middle">
+    State Machine Diagram: Late Fee Application Process
+  </text>
+  
+  <!-- Start State -->
+  <circle cx="100" cy="100" r="15" fill="black"/>
+  <text x="90" y="130" font-size="11">Start</text>
+  
+  <!-- States -->
+  <!-- Active Lease -->
+  <rect x="200" y="80" width="120" height="40" rx="20" fill="#E3F2FD" stroke="black" stroke-width="2"/>
+  <text x="260" y="105" text-anchor="middle" font-size="12" font-weight="bold">Active Lease</text>
+  
+  <!-- Rent Due -->
+  <rect x="450" y="80" width="120" height="40" rx="20" fill="#FFF9C4" stroke="black" stroke-width="2"/>
+  <text x="510" y="105" text-anchor="middle" font-size="12" font-weight="bold">Rent Due</text>
+  
+  <!-- Grace Period -->
+  <rect x="700" y="80" width="120" height="40" rx="20" fill="#FFE0B2" stroke="black" stroke-width="2"/>
+  <text x="760" y="105" text-anchor="middle" font-size="12" font-weight="bold">Grace Period</text>
+  
+  <!-- Late Payment -->
+  <rect x="700" y="250" width="120" height="40" rx="20" fill="#FFF59D" stroke="black" stroke-width="2"/>
+  <text x="760" y="275" text-anchor="middle" font-size="12" font-weight="bold">Late Payment</text>
+  
+  <!-- Penalty Applied -->
+  <rect x="450" y="250" width="120" height="40" rx="20" fill="#FFCDD2" stroke="red" stroke-width="2"/>
+  <text x="510" y="275" text-anchor="middle" font-size="12" font-weight="bold">Penalty Applied</text>
+  
+  <!-- Payment Received -->
+  <rect x="200" y="250" width="140" height="40" rx="20" fill="#C8E6C9" stroke="black" stroke-width="2"/>
+  <text x="270" y="275" text-anchor="middle" font-size="12" font-weight="bold">Payment Received</text>
+  
+  <!-- Legal Notice -->
+  <rect x="450" y="420" width="120" height="40" rx="20" fill="#FF9800" stroke="black" stroke-width="3"/>
+  <text x="510" y="445" text-anchor="middle" font-size="12" font-weight="bold">Legal Notice</text>
+  
+  <!-- Delinquent -->
+  <rect x="700" y="420" width="120" height="40" rx="20" fill="#F44336" stroke="black" stroke-width="3"/>
+  <text x="760" y="445" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Delinquent</text>
+  
+  <!-- End State -->
+  <circle cx="270" cy="600" r="15" fill="black"/>
+  <circle cx="270" cy="600" r="12" fill="white"/>
+  <circle cx="270" cy="600" r="8" fill="black"/>
+  <text x="209" y="635" font-size="11">End (Lease Terminated)</text>
+  
+  <!-- Transitions with Labels -->
+  <!-- Start to Active Lease -->
+  <line x1="115" y1="100" x2="200" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="118" y="89" font-size="10" font-style="italic">lease created</text>
+  
+  <!-- Active Lease to Rent Due -->
+  <line x1="320" y1="100" x2="450" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="325" y="95" font-size="10" font-style="italic">due date reached</text>
+  <text x="325" y="111" font-size="9" fill="blue">[1st of month]</text>
+  
+  <!-- Rent Due to Grace Period -->
+  <line x1="570" y1="100" x2="700" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="590" y="95" font-size="10" font-style="italic">no payment</text>
+  <text x="590" y="111" font-size="9" fill="blue">[days: 1-5]</text>
+  
+  <!-- Grace Period to Late Payment -->
+  <line x1="760" y1="120" x2="760" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="765" y="185" font-size="10" font-style="italic">grace expired</text>
+  <text x="765" y="200" font-size="9" fill="blue">[day > 5]</text>
+  
+  <!-- Late Payment to Penalty Applied -->
+  <line x1="700" y1="270" x2="570" y2="270" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="635" y="265" font-size="10" font-style="italic">apply fee</text>
+  <text x="635" y="285" font-size="9" fill="red">/ fee = rent × 5%</text>
+  
+  <!-- Penalty Applied to Payment Received -->
+  <line x1="450" y1="270" x2="340" y2="270" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="374" y="265" font-size="10" font-style="italic">payment made</text>
+  
+  <!-- Payment Received back to Active Lease -->
+  <path d="M 270 250 Q 270 165 260 120" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="210" y="185" font-size="10" font-style="italic">reset cycle</text>
+  
+  <!-- Rent Due directly to Payment Received -->
+  <path d="M 510 120 Q 380 185 270 250" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="313" y="180" font-size="10" font-style="italic">payment made</text>
+  <text x="313" y="195" font-size="9" fill="green">[on time]</text>
+  
+  <!-- Grace Period to Payment Received -->
+  <path d="M 700 100 Q 500 150 340 250" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="170" font-size="10" font-style="italic">payment made</text>
+  <text x="520" y="185" font-size="9" fill="green">[within grace]</text>
+  
+  <!-- Penalty Applied to Legal Notice -->
+  <line x1="510" y1="290" x2="510" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="515" y="355" font-size="10" font-style="italic">30 days late</text>
+  <text x="515" y="370" font-size="9" fill="red">[day > 30]</text>
+  
+  <!-- Legal Notice to Delinquent -->
+  <line x1="570" y1="440" x2="700" y2="440" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="600" y="435" font-size="10" font-style="italic">60 days late</text>
+  <text x="600" y="455" font-size="9" fill="red">[day > 60]</text>
+  
+  <!-- Delinquent to End -->
+  <path d="M 700 460 Q 485 530 285 600" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="490" y="545" font-size="10" font-style="italic">eviction process</text>
+  
+  <!-- Payment Received to End -->
+  <line x1="270" y1="290" x2="270" y2="585" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="440" font-size="10" font-style="italic">lease ends</text>
+  
+  <!-- Legal Notice to Payment Received (if paid) -->
+  <path d="M 450 440 Q 350 350 270 290" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="370" y="355" font-size="10" font-style="italic">payment made</text>
+  <text x="370" y="370" font-size="9" fill="green">[with penalties]</text>
+  
+  <!-- Self-loop on Penalty Applied for accumulating fees -->
+  <path d="M 570 250 Q 620 220 620 270 Q 620 320 570 290" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="590" y="315" font-size="9">monthly fee</text>
+  <text x="590" y="330" font-size="9" fill="red">accumulation</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend Box -->
+  <rect x="50" y="680" width="1000" height="100" fill="#F5F5F5" stroke="black" stroke-width="1"/>
+  <text x="60" y="700" font-size="12" font-weight="bold">Legend:</text>
+  
+  <!-- State Types -->
+  <rect x="60" y="710" width="80" height="25" rx="12" fill="#E3F2FD" stroke="black"/>
+  <text x="145" y="727" font-size="10">Normal State</text>
+  
+  <rect x="230" y="710" width="80" height="25" rx="12" fill="#FFCDD2" stroke="red" stroke-width="2"/>
+  <text x="315" y="727" font-size="10">Warning State</text>
+  
+  <rect x="400" y="710" width="80" height="25" rx="12" fill="#F44336" stroke="black" stroke-width="3"/>
+  <text x="485" y="727" font-size="10" fill="white">Critical State</text>
+  
+  <!-- Transition Types -->
+  <line x1="60" y1="750" x2="120" y2="750" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="125" y="753" font-size="10">Normal Transition</text>
+  
+  <line x1="230" y1="750" x2="290" y2="750" stroke="black" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="295" y="753" font-size="10">Conditional Transition</text>
+  
+  <!-- Annotations -->
+  <text x="450" y="750" font-size="10" font-style="italic">transition label</text>
+  <text x="540" y="753" font-size="10">= Event</text>
+  
+  <text x="450" y="765" font-size="10" fill="blue">[guard condition]</text>
+  <text x="540" y="768" font-size="10">= Condition</text>
+  
+  <text x="650" y="750" font-size="10" fill="red">/ action</text>
+  <text x="700" y="753" font-size="10">= Action to perform</text>
+  
+  <!-- Business Rules Box -->
+  <rect x="880" y="300" width="200" height="150" fill="#FFFFCC" stroke="black" stroke-dasharray="3,3"/>
+  <text x="980" y="320" text-anchor="middle" font-size="11" font-weight="bold">Business Rules</text>
+  <text x="890" y="340" font-size="9">• Grace Period: 5 days</text>
+  <text x="890" y="355" font-size="9">• Late Fee: 5% of rent</text>
+  <text x="890" y="370" font-size="9">• Legal Notice: Day 30</text>
+  <text x="890" y="385" font-size="9">• Delinquent: Day 60</text>
+  <text x="890" y="400" font-size="9">• Max Late Fee: $500/month</text>
+  <text x="890" y="415" font-size="9">• Notice Period: 14 days</text>
+  <text x="890" y="430" font-size="9">• Provincial laws apply</text>
+</svg>

@@ -1,0 +1,201 @@
+<svg width="900" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-size="18" font-weight="bold" text-anchor="middle">
+    Activity Diagram: Maintenance Request Process
+  </text>
+  
+  <!-- Swimlanes -->
+  <!-- Tenant Swimlane -->
+  <rect x="50" y="60" width="250" height="500" fill="#E3F2FD" stroke="black" stroke-width="2"/>
+  <rect x="50" y="60" width="250" height="40" fill="#2196F3" stroke="black" stroke-width="2"/>
+  <text x="175" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Tenant</text>
+  
+  <!-- System Swimlane -->
+  <rect x="300" y="60" width="250" height="500" fill="#FFF3E0" stroke="black" stroke-width="2"/>
+  <rect x="300" y="60" width="250" height="40" fill="#FF9800" stroke="black" stroke-width="2"/>
+  <text x="425" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="white">System</text>
+  
+  <!-- Property Manager Swimlane -->
+  <rect x="550" y="60" width="300" height="500" fill="#E8F5E9" stroke="black" stroke-width="2"/>
+  <rect x="550" y="60" width="300" height="40" fill="#4CAF50" stroke="black" stroke-width="2"/>
+  <text x="700" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Property Manager</text>
+  
+  <!-- Extended area for Manager activities -->
+  <rect x="50" y="560" width="800" height="380" fill="#FFEBEE" stroke="black" stroke-width="2"/>
+  <rect x="50" y="560" width="800" height="40" fill="#f44336" stroke="black" stroke-width="2"/>
+  <text x="450" y="585" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Property Manager (Assignment Phase)</text>
+  
+  <!-- Start Node -->
+  <circle cx="175" cy="130" r="15" fill="black"/>
+  <text x="200" y="135" font-size="11">Start</text>
+  
+  <!-- Tenant Activities -->
+  <!-- Login -->
+  <rect x="125" y="160" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="185" text-anchor="middle" font-size="11">Tenant Logs In</text>
+  
+  <!-- Select Maintenance -->
+  <rect x="125" y="220" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="238" text-anchor="middle" font-size="11">Select</text>
+  <text x="175" y="250" text-anchor="middle" font-size="11">Maintenance</text>
+  
+  <!-- Choose Category -->
+  <rect x="125" y="280" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="298" text-anchor="middle" font-size="11">Choose Issue</text>
+  <text x="175" y="310" text-anchor="middle" font-size="11">Category</text>
+  
+  <!-- Decision: Emergency? -->
+  <polygon points="425,360 475,330 525,360 475,390" fill="yellow" stroke="black" stroke-width="2"/>
+  <text x="475" y="363" text-anchor="middle" font-size="11">Emergency?</text>
+  
+  <!-- Emergency Path (YES) -->
+  <rect x="325" y="420" width="100" height="40" rx="10" fill="#FFCDD2" stroke="red" stroke-width="2"/>
+  <text x="375" y="438" text-anchor="middle" font-size="11">Send Emergency</text>
+  <text x="375" y="450" text-anchor="middle" font-size="11">Alert</text>
+  
+  <rect x="325" y="480" width="100" height="40" rx="10" fill="#FFCDD2" stroke="red" stroke-width="2"/>
+  <text x="375" y="498" text-anchor="middle" font-size="11">Display Phone</text>
+  <text x="375" y="510" text-anchor="middle" font-size="11">Contact</text>
+  
+  <!-- Normal Path (NO) -->
+  <rect x="125" y="360" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="378" text-anchor="middle" font-size="11">Describe</text>
+  <text x="175" y="390" text-anchor="middle" font-size="11">Issue</text>
+  
+  <rect x="125" y="420" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="438" text-anchor="middle" font-size="11">Upload</text>
+  <text x="175" y="450" text-anchor="middle" font-size="11">Photos</text>
+  
+  <rect x="125" y="480" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="175" y="498" text-anchor="middle" font-size="11">Set Access</text>
+  <text x="175" y="510" text-anchor="middle" font-size="11">Times</text>
+  
+  <!-- Submit Request (Merge Point) -->
+  <rect x="575" y="420" width="100" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="625" y="438" text-anchor="middle" font-size="11">Submit</text>
+  <text x="625" y="450" text-anchor="middle" font-size="11">Request</text>
+  
+  <!-- System Creates Ticket -->
+  <rect x="375" y="620" width="150" height="40" rx="10" fill="#FFF9C4" stroke="black" stroke-width="2"/>
+  <text x="450" y="638" text-anchor="middle" font-size="11">System Creates</text>
+  <text x="450" y="650" text-anchor="middle" font-size="11">Ticket with ID</text>
+  
+  <!-- Manager Reviews -->
+  <rect x="125" y="680" width="120" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="185" y="698" text-anchor="middle" font-size="11">Manager Reviews</text>
+  <text x="185" y="710" text-anchor="middle" font-size="11">Request</text>
+  
+  <!-- Check Contractor Availability -->
+  <rect x="375" y="680" width="150" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="450" y="698" text-anchor="middle" font-size="11">Check Contractor</text>
+  <text x="450" y="710" text-anchor="middle" font-size="11">Availability</text>
+  
+  <!-- Assign to Handyman -->
+  <rect x="650" y="680" width="120" height="40" rx="10" fill="white" stroke="black" stroke-width="2"/>
+  <text x="710" y="698" text-anchor="middle" font-size="11">Assign to</text>
+  <text x="710" y="710" text-anchor="middle" font-size="11">Handyman</text>
+  
+  <!-- Update Status -->
+  <rect x="375" y="750" width="150" height="40" rx="10" fill="#FFF9C4" stroke="black" stroke-width="2"/>
+  <text x="450" y="768" text-anchor="middle" font-size="11">Update Status</text>
+  <text x="450" y="780" text-anchor="middle" font-size="11">to 'Assigned'</text>
+  
+  <!-- Notify All Parties -->
+  <rect x="375" y="820" width="150" height="40" rx="10" fill="#FFF9C4" stroke="black" stroke-width="2"/>
+  <text x="450" y="838" text-anchor="middle" font-size="11">Notify Tenant &amp;</text>
+  <text x="450" y="850" text-anchor="middle" font-size="11">Handyman</text>
+  
+  <!-- End Node -->
+  <circle cx="450" cy="900" r="15" fill="black"/>
+  <circle cx="450" cy="900" r="12" fill="white"/>
+  <circle cx="450" cy="900" r="8" fill="black"/>
+  <text x="475" y="905" font-size="11">End</text>
+  
+  <!-- Flow Arrows -->
+  <!-- Start to Login -->
+  <line x1="175" y1="145" x2="175" y2="160" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Login to Select -->
+  <line x1="175" y1="200" x2="175" y2="220" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Select to Choose -->
+  <line x1="175" y1="260" x2="175" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Choose to Decision -->
+  <line x1="225" y1="300" x2="425" y2="360" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Decision YES to Emergency Alert -->
+  <line x1="475" y1="390" x2="375" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="420" y="396" font-size="10" fill="red">YES</text>
+  
+  <!-- Emergency Alert to Phone -->
+  <line x1="375" y1="460" x2="375" y2="480" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Decision NO to Describe -->
+  <line x1="425" y1="360" x2="225" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="320" y="363" font-size="10" fill="green">NO</text>
+  
+  <!-- Describe to Upload -->
+  <line x1="175" y1="400" x2="175" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Upload to Set Times -->
+  <line x1="175" y1="460" x2="175" y2="480" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Set Times to Submit -->
+  <line x1="225" y1="500" x2="575" y2="440" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Phone Contact to Submit -->
+  <line x1="425" y1="500" x2="575" y2="440" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Submit to System Creates -->
+  <line x1="625" y1="460" x2="450" y2="620" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- System to Manager Reviews -->
+  <line x1="450" y1="660" x2="185" y2="680" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Manager to Check Availability -->
+  <line x1="245" y1="700" x2="375" y2="700" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Check to Assign -->
+  <line x1="525" y1="700" x2="650" y2="700" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Assign to Update Status -->
+  <line x1="710" y1="720" x2="450" y2="750" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Update to Notify -->
+  <line x1="450" y1="790" x2="450" y2="820" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Notify to End -->
+  <line x1="450" y1="860" x2="450" y2="885" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <rect x="50" y="960" width="800" height="30" fill="#F5F5F5" stroke="black"/>
+  <text x="60" y="978" font-size="10" font-weight="bold">Legend:</text>
+  <rect x="120" y="967" width="40" height="16" rx="5" fill="white" stroke="black"/>
+  <text x="165" y="978" font-size="10">Activity</text>
+  
+  <polygon points="230,975 245,965 260,975 245,985" fill="yellow" stroke="black"/>
+  <text x="265" y="978" font-size="10">Decision</text>
+  
+  <circle cx="340" cy="975" r="8" fill="black"/>
+  <text x="350" y="978" font-size="10">Start</text>
+  
+  <circle cx="420" cy="975" r="8" fill="black"/>
+  <circle cx="420" cy="975" r="6" fill="white"/>
+  <circle cx="420" cy="975" r="4" fill="black"/>
+  <text x="430" y="978" font-size="10">End</text>
+  
+  <rect x="480" y="967" width="40" height="16" rx="5" fill="#FFCDD2" stroke="red"/>
+  <text x="525" y="978" font-size="10">Emergency Path</text>
+  
+  <rect x="620" y="967" width="40" height="16" rx="5" fill="#FFF9C4" stroke="black"/>
+  <text x="665" y="978" font-size="10">System Activity</text>
+</svg>
